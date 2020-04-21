@@ -28,10 +28,22 @@ If you're a new R user, it's possible that installing R will be challenging. In 
 
 
 # R Resources
+---
+title: Resources
+nav: true
+---
+
+# Resources
+
+These are some resources to get you start or continue learning R. The list is non-exhaustive; as i find more interesting resource, I will put them here.
+
 [RStudio Cheat Sheets](https://rstudio.com/resources/cheatsheets)<br/>
 [UCLA's Statistics Consulting Group](https://stats.idre.ucla.edu)<br/>
 [R for Data Science](https://r4ds.had.co.nz)<br/>
 [Our Coding Club](https://ourcodingclub.github.io/)<br/>
+[R for Psychological Science](https://psyr.org/)<br/>
+[Teacups, giraffes, and statistics](https://tinystats.github.io/teacups-giraffes-and-statistics/)<br/>
+
 
 ## License
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
