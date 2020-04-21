@@ -27,12 +27,6 @@ If you're a new R user, it's possible that installing R will be challenging. In 
 
 
 
-# R Resources
----
-title: Resources
-nav: true
----
-
 # Resources
 
 These are some resources to get you start or continue learning R. The list is non-exhaustive; as i find more interesting resource, I will put them here.
