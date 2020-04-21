@@ -1,0 +1,12 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.Rproj.user
+flyer.psd
+flyer.ai
+code
+data
+handouts
+Slides
+notes.md
