@@ -13,7 +13,7 @@ As I know everyone is busy with work, research, and classes, this workshop is no
 
 ## Workshop Information
 
-**Date:** 3rd and 4th June (Wednesday & Thursday)  
+**Date:** 10th and 11th June (Wednesday & Thursday)  
 **Time:** 3.00 - 4.30pm  
 **Location:** Virtually, via [Skype for Business](http://www.depts.ttu.edu/telecom/sfb/index.php) (A link will be sent one week before the workshop)
 
