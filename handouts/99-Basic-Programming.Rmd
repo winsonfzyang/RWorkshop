@@ -1,0 +1,391 @@
+---
+title: "Getting started with R Notebook"
+output:
+  html_document: 
+    fig_caption: yes
+    toc: yes
+  html_notebook: default
+  pdf_document: default
+editor_options:
+  chunk_output_type: inline
+---
+
+<!-- This file by Winson Yang is licensed under a Creative Commons Attribution 4.0 International License, adapted from the orignal work at https://github.com/rstudio/master-the-tidyverse by RStudio. -->
+
+```{r setup}
+if (!require(knitr)) install.packages('knitr'); library(knitr)
+if (!require(kableExtra)) install.packages('kableExtra'); library(kableExtra)
+if (!require(tidyverse)) install.packages("tidyverse") ; library(tidyverse)
+opts_chunk$set(comment = "#", warning = FALSE, message = FALSE)
+```
+
+## Basics of coding
+
+We will review some basics of coding, since I will assume you have some knowledge of R. Hence this will only be a short section in the interests of getting you wrangling with data as soon as possible. 
+
+
+### R is a calculator
+
+You can use R as a calculator like this: 
+
+```{r}
+1 / 200 * 30
+(64 + 12 - 28) ^ 2
+```
+
+<span style="color:purple">
+**Notice that I leave a space in between every operator? This is one of the best practice of coding. Coding in such a way will make your entire program clearer and neater to you and your readers.**
+</span>
+
+Along the workshop, I will try to share as many best practices as possible. These will be <span style="color:purple">**bolded in purple**</span>.  
+
+##### Now, you try!  
+
+Now, let's practice. What is: 
+
+1. 5 x 297  
+2. 3463 / 23  
+3. 49 - 33 + 29 x 0.5  
+
+*Note: Remember to apply rules of operation!
+
+``` {r}
+# Type your code after this line! 
+
+
+```
+
+<span style="color:purple">
+**Typing  `#` in R gives you a comment, which is non-executable in R. Notice that I leave a space right after `# Comment`? This makes it easier to read the comments as opposed to `#This is my comment`**
+</span>
+
+
+### Objects in R
+
+As R is an object-based language, you can name any value, or string or set it as a variable. For example, you can set 4 to be called a using `a = 4`, or `a <- 4`. Then when you want to call out 4, you can type `a` in the editor to call out the variable.
+
+<span style="color:purple">
+**There are keyboard shortcuts you can use when you assign something to an object. In windows, press `	Alt + -`, or in Mac, `option + -`.** 
+</span>
+
+To view more shortcuts, press `Alt + Shift + K`	in windows, or `Option + Shift + K` in Mac. Alternatively, you can visit this [page](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts).
+
+##### Now, you try!  
+
+Now let's assign `4` to a variable called `a`. Then add `2` to `a` and see what you get.
+
+```{r}
+# Type your code after this line! 
+
+
+```
+
+See that we can perform operations with objects? Let's try to add `a` to `3/a` and see what we get.  
+
+```{r}
+# Type your code after this line! 
+
+
+```
+
+
+Object names must start with a letter, and can only contain letters, numbers, _, and .. You want your object names to be descriptive, so you'll need a convention for multiple words. You can name your objects anything you want (up to your imagination!), but there are a few rules. Names cannot start with number, and they cannot use special symbols such as `^`, `!`, `$`, `@`, `+`, `-`, `/`, or `*`.
+
+``` {r echo = FALSE}
+AcceptableNames <- c("my_data", "cars_which_are_red", "data.1", "FINALdata")
+UnacceptableNames <- c("1a", "!Boo", "$ashkld", "^my_variables")
+df <- data.frame(AcceptableNames, UnacceptableNames, stringsAsFactors = FALSE)
+kable(df) %>% kable_styling(bootstrap_options = "striped", full_width = FALSE) %>% 
+  column_spec(1, background = "#a9fb98", color = "#000000") %>% 
+  column_spec(2, background = "#ffb3b3", color = "#000000")
+```
+
+While these are acceptables names, they are non-conventional as they are too long, not meaningful,  consistent, and specific.
+
+<span style="color:purple">
+**Some best practice of object naming: The object name should be `consise`, `meaningful`, `consistent`, and `specific`**.
+</span>
+
+We can also create objects of texts (known as characters or strings) such as this:
+
+```{r  results = 'hold'}
+b <- "Aloha"
+c <- "Hello World!"
+b
+c
+
+```
+
+##### Now, you try!
+
+Here are some texts and values I would like you to assign objects with.  
+
+1. "We are learning objects" 
+2. 2020
+3. 100
+
+```{r}
+# Type your code after this line! 
+
+
+```
+
+
+### Operators
+
+There are many types of operators in R. They are normally used to carry out mathematical and logical operations. We can classify R operators into the following categories:
+
+1. Arithmetic operators
+2. Relational operators
+3. Logical operators
+4. Assignment operators
+
+#### Arithmetic operators
+
+These operators are used to carry out mathematical operations like addition and multiplication. We have already covered most of them, but here are more arithmetic operators:
+
+```{r echo = FALSE}
+Operator <- c("'+'", "'-'", "'*'", "/", "^", "%%", "%/%")
+Description <- c("Addition", "Subtraction", "Multiplication", "Division",
+                 "Exponent", "Modulus (Remainder from division)", "Integer Division")
+df <- data.frame(Operator, Description, stringsAsFactors = FALSE)
+kable(df) %>% kable_styling(bootstrap_options = "striped", full_width = FALSE) %>% 
+  column_spec(1:2, color = "#000000")
+
+```
+
+Here are some examples:
+
+```{r  results = 'hold'}
+x <- 3
+y <- 28
+x + y
+x / y
+y * (4 * x)
+y ^ (x - 5)
+```
+
+
+#### Relational operators
+
+Relational operators are used to compare between values. Here is a list of relational operators available in R.
+
+```{r echo = FALSE}
+Operator <- c("<", "<=", ">", ">=", "==", "!=")
+Description <- c("less than", "less than or equal to", 
+                 "greater than", "greater than or equal to",
+                 "exactly equal to", "not equal to")
+df <- data.frame(Operator, Description, stringsAsFactors = FALSE)
+kable(df) %>% kable_styling(bootstrap_options = "striped", full_width = FALSE) %>% 
+  column_spec(1:2, color = "#000000")
+
+```
+
+Here are some examples:
+
+
+```{r results = 'hold'}
+x <- 3
+y <- 28
+
+y > x
+y < x
+x <= y
+x >= y
+
+y == 28
+y == x
+
+x != 6
+
+```
+
+#### Logical operators
+
+Logical operators are used to compare between values. All operations are carried out in element-wise fashion. They can work on single elements, as well as vectors and data frames. 
+
+```{r echo = FALSE}
+Operator <- c("!", "&", "&&", "|", "||")
+Description <- c("Logical NOT", 
+                 "Element-wise logical AND", "Logical AND",
+                 "Element-wise logical OR", "logical OR")
+df <- data.frame(Operator, Description, stringsAsFactors = FALSE)
+kable(df) %>% kable_styling(bootstrap_options = "striped", full_width = FALSE) %>% 
+  column_spec(1:2, color = "#000000")
+```
+
+Operators `&` and `|` perform element-wise operation producing result having length of the longer operand.
+
+But `&&` and `||` examines only the first element of the operands resulting into a single length logical vector.
+
+In logical operators, zero is considered `FALSE` and non-zero numbers are taken as `TRUE`.
+
+Here are some examples:
+
+```{r results = 'hold'}
+x <- c(TRUE,FALSE,0,6)
+y <- c(FALSE,TRUE,FALSE,TRUE)
+
+!x
+x & y
+x && y
+x | y
+x || y
+```
+
+#### Assignment operators
+
+These operators are used to assign values to variables.
+
+```{r echo = FALSE}
+Operator <- c("<-, <<-, =", "->, ->>")
+Description <- c("Leftwards assignment", "Rightwards assignment")
+df <- data.frame(Operator, Description, stringsAsFactors = FALSE)
+kable(df) %>% kable_styling(bootstrap_options = "striped", full_width = FALSE) %>% 
+  column_spec(1:2, color = "#000000")
+```
+
+The operators `<-` and `=` can be used, almost interchangeably, to assign to variable in the same environment.
+
+The `<<-` operator is used for assigning to variables in the parent environments (more like global assignments). The rightward assignments, although available are rarely used.
+
+<span style="color:purple">
+**Some best practice of assingnment operators: Always use `<-` rather than `=` when assign variables as it becomes comfusing when you start to use `=` operators in a function. For example: `mod_1 <- lm(data = df, y ~ x)`. See that I use `<-` to assign the model to `mod_1`, and in the `lm` function, I use `=` to assign our `df` variable to the `data` argument?**
+</span>
+
+
+### Vectors!
+
+There are two types of vectors:  
+
+- **Atomic vectors**, of which there are six types: *logical*, *integer*, *double*, *character*, *complex*, and *raw.* Integer and double vectors are collectively known as *numeric* vectors.  
+- **Lists**, which are sometimes called *recursive vectors* because lists can contain other lists.  
+
+The chief difference between atomic vectors and lists is that atomic vectors are *homogeneous*, while lists can be *heterogeneous*. Meaning to say, atomic vectors can only contain one type of elements, while lists can contain any combination of elements.
+
+For the case of this workshop, we will only focus on atomic vectors.
+
+Vectors are generally created using the `c()` function, and they contain two properties: 
+
+- *type*, which you can determine using typeof():
+
+```{r}
+x <- c(1, 2, 3)
+y <- c("a", "b", "c", "d", "e")
+z <- c(FALSE, TRUE)
+typeof(x)
+typeof(y)
+typeof(z)
+```
+
+
+- *length*, which you can determine using length():
+
+```{r}
+length(x)
+length(y)
+length(z)
+```
+
+#### Atomic vectors can only contain one type of element!
+
+From the previous example, you will notice that my vectors are all either numerics, characters, or logicals. I don't have a mix of these types of elements. What happens when I mix them in the same vector? You can try them out below:
+
+1. Put 1, "a", 5, FALSE in the same vector and test
+2. put objects `x`, `y` in the same vector
+3. Put objects `y`, `z` in the same vector
+4. Put objects `x`, `z` in the same vector
+5. Put objects `x`, `y`, `z` in the same vector
+
+Hint: To put objects in the same vector, you will do the same as with elements: `c(z, y)`
+
+```{r}
+# Type your code after this line! 
+
+
+```
+
+Notice that for numerics and logicals, the vector has turned into a numeric vector, but for anything that contains characters, the entire vector becomes a character array.
+
+#### Coercion
+
+What you did above is called **implicit coercion**. Implicit coercion happens when you use a vector in a specific context that expects a certain type of vector. For example, when you use a logical vector with a numeric summary function, or when you use a double vector where an integer vector is expected.
+
+Explicit coercion happens when you want to convert the vector into another type. We will use functions like `as.logical()`, `as.integer()`, `as.double()`, or `as.character()` to convert the vector into those types.
+
+Here are some exercises to try:
+
+1. Try typing `as.character(x)` to see what happens
+2. Try typing `as.integer(z)` to see what happens
+3. Try typing `as.logical(y)` to see what happens
+4. Try typing `as.character(z)` to see what happens
+
+```{r}
+# Type your code after this line! 
+
+
+```
+
+You see that the output for No.3 is weird because everything becomes `TRUE`! This will become confusing. We normally use logical operators to filter and subset data. However, there are better methods for doing this, which we will cover in the next tutorial.
+
+#### Subsetting vectors
+
+We subset vectors to get only the elements or values we want, dropping the unwanted values.
+
+Here's an example:
+
+```{r}
+x <- c(12, 64, -234, 5574, 2897)
+x[1] # Gives you the first element, which is 12
+x[3] # Gives you the third element, which is -234
+x[-2] # Removes the second element
+```
+
+##### Now, you try!  
+
+1. Subset the 1st, 3rd, and 4th elements in x (Hint: use c() to subset multiple elements)
+2. Subset the last two elements in y (Hint: use -c() to reverse the order)
+
+```{r}
+# Type your code after this line! 
+x <- c(12.5, 64, -234, 5574, 2897, -0.5235, 0.2796)
+y <- c("Hallo", "Hello", "Bonjour", "Szia", "Hoi", "Ciao")
+```
+
+
+#### Applications of subsetting vectors
+
+##### Loopup tables (character subsetting)
+
+Character matching is a powerful way to create lookup tables. Say you want to convert abbreviations:
+
+```{r}
+x <- c("m", "f", "u", "f", "f", "m", "m")
+lookup <- c(m = "Male", f = "Female", u = NA)
+lookup[x]
+```
+
+##### Ordering (integer subsetting)
+
+`order()` takes a vector as its input and returns an integer vector describing how to order the subsetted vector
+
+```{r}
+x <- c(12.5, 64, -234, 5574, 2897, -0.5235, 0.2796)
+order(x) # Gets the index from lowest value to highest value
+x[order(x)] # Subset (in fact you re-order the elements) the vector
+```
+
+#### Selecting rows based on a condition (logical subsetting)
+
+Because logical subsetting allows you to easily combine conditions from multiple columns, it's probably the most commonly used technique for extracting rows out of a data frame. This is normally used to filter your data. However, there are more powerful tools to do this. We will cover that in the next tutorial. This is just the basic idea of subsetting.
+
+```{r}
+mtcars # Full data
+mtcars[mtcars$gear == 5, ] # Subset rows where gear = 5
+mtcars[mtcars$gear == 5 & mtcars$cyl == 4, ] # Subset rows where gear = 5 AND cyl = 4
+```
+
+
+## Concluding statement
+
+This is just a crash course on the basics of R Programming. There are definitly more details we can cover in each topic, but this will get you started on R and should be enough to get you through the next tutorial, which is data wrangling with tidyverse.

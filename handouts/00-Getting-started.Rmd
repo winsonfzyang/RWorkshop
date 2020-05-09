@@ -1,0 +1,80 @@
+---
+title: "Getting started with R Notebook"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+  pdf_document: default
+editor_options:
+  chunk_output_type: inline
+---
+
+<!-- This file by Winson Yang is licensed under a Creative Commons Attribution 4.0 International License. -->
+
+```{r setup}
+knitr::opts_chunk$set(comment = "#", warning = FALSE, message = FALSE)
+library(tidyverse)
+```
+
+## R notebooks
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+R code goes in **code chunks**, denoted by three backticks. Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Crtl+Shift+Enter* (Windows) or *Cmd+Shift+Enter* (Mac). 
+
+```{r}
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+Add a new chunk by clicking the *Insert* button on the toolbar, then selecting *R* or by pressing  *Ctrl+Alt+I* (Windows) or *Cmd+Option+I* (Mac).
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* (Windows) or *Cmd+Shift+K* (Mac) to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+
+## What you will learn in this two-part workshop
+
+This is a short workshop that aims to guide you with the best practices in using R for statistical analyses, specifically for psychologists. Hence there are some portions which I will highlight more than the others. Additionally, this workshop will assume you know some basic knowledge in R. 
+
+In this workshop, you will learn how to use the `tidyverse` collection, which is a collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. In short you will learn:
+
+- reading and writing data using `readr`
+- data manipulation with `dplyr`, `tidyr`, and `tibble`
+- data visualization and `ggplot2` grammar
+
+
+### This is an example of a plot you will be able to create at the end of this workshop!
+``` {r echo=FALSE}
+ggplot(data = mpg, aes(x = displ, y = hwy)) +
+  geom_jitter(aes(color = class, 
+                 size = cyl)) +
+  guides(color = guide_legend(override.aes = list(size = 4))) +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(title = "Relationship between  displacement and highway MPG",
+       x = "Displacement",
+       y = "Highway Miles per Gallon") +
+  scale_color_manual(values = c("#e69f00", "#56b3e9", "#009e73", "#f0e442", 
+                                "#0072b2", "#d55c00", "#cc79a7", "#000000")) +
+  theme(
+    plot.title = element_text(face = "bold",
+                              size = 16,
+                              hjust = 0.5),
+
+    axis.title = element_text(face = "bold", size = 16),
+    axis.title.x = element_text(vjust = -0.2),
+    axis.title.y = element_text(angle = 90, vjust = 2),
+    axis.line = element_line(colour = "black"),
+    
+    panel.background = element_rect(fill ="#ffffff"),
+    panel.grid.major = element_line(colour = "#f0f0f0"),
+    
+    legend.background = element_rect(color = "black", fill = "#EEEEEE"),
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 12),
+    
+    strip.background = element_rect(colour = "#f0f0f0", fill = "#f0f0f0"),
+    strip.text = element_text(face = "bold")
+  )
+```
