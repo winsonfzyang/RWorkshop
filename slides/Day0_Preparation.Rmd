@@ -1,0 +1,402 @@
+---
+title: "R Workshop Day 0: Data wrangling"
+author: "Winson Yang<br><span style = 'font-size: 50%;'>Texas Tech University | Department of Psychological Sciences</span>"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    # css: custom20200124.css
+    css: [default, rladies, rladies-fonts]
+    lib_dir: libs
+    nature:
+      ratio: "16:9"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    seal: false
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = "#", warning = FALSE, message = FALSE)
+library(babynames)
+library(fontawesome)
+```
+
+layout: true
+  
+<!-- <div class="my-footer"><span>arm.rbind.io/slides/xaringan</span></div> -->
+
+<!-- this adds the link footer to all slides, depends on my-footer class in css-->
+
+---
+
+name: xaringan-title
+class: left, middle
+background-image: url(img/background.jpg)
+background-size: cover
+
+# Preworkshop to Tidyverse
+
+<img src="https://tidyverse.tidyverse.org/articles/tidyverse-logo.png" alt="tidyverse" width="180" />
+
+### .fancy[Basic R Programming]
+
+.large[Winson Yang | Texas Tech University | `r Sys.Date()`]
+
+<!-- this ends up being the title slide since seal = FALSE-->
+
+---
+
+class: inverse, center, middle
+
+# Let's Get Started
+
+---
+
+class: right, middle
+
+
+<img class="rounded-circle" src="https://github.com/winsonfzyang.png" width="150px"/>
+
+# Find me at...
+
+[`r fa(name = "twitter")` @winsonfzyang](http://twitter.com/winsonfzyang)  
+[`r fa(name = "github")` @winsonfzyang](http://github.com/winsonfzyang)  
+[`r fa(name = "link")` winsonfzyang.github.io](https://winsonfzyang.github.io)  
+[`r fa(name = "paper-plane")` winson.yang@ttu.edu](mailto:winson.yang@ttu.edu)
+
+---
+
+# Who am I 
+
+--
+
+Second year Experimental (Cognitive) student.
+
+--
+
+- Projects include Neurofeedback, Neuroscience of Meditaition, Meta-awareness and flexibility, Social Function in Neurodegenerative diseases
+
+--
+
+Programming enthusiast
+
+--
+
+- data visualization, UX/UI, software development for neuroscientists and psychologists
+
+- Statistical programming education and workshop development
+
+--
+
+Interests
+
+--
+
+- classical piano, Photography, baking, cooking, hiking, 
+
+.pull-left[
+
+.pull-left[
+![Photography](img/photography.JPG)
+]
+
+.pull-right[
+![Baking](img/baking.JPG)
+]
+
+
+]
+
+.pull-right[
+
+.pull-left[
+![Cooking](img/cooking.JPG)
+]
+
+.pull-right[
+![Hiking](img/hiking.JPG)
+]
+
+
+]
+
+
+---
+
+class: inverse, center, middle
+
+# Who are you and why are you here?
+
+---
+
+
+# Workhop aims
+
+Introduce the main components of the Tidyverse
+- readr (read files)
+- dplyr (manipulate data)
+- ggplot2 (make awesome graphs)
+
+I have to assume you have a basic knowledge of R
+
+We don't really have time to cover all of the tidyverse (it is a huge universe!)
+
+
+---
+
+class: inverse, center, middle
+
+# Part 0: Basic R programming 
+
+---
+
+# R is a calculator
+
+R can be thought of as a calculator, where you can perform different operations such as addition, subtraction, multiplication, divisions, and exponentiation. These are just some examples:
+
+.pull-left[
+``` {r}
+4 + 4       # addition
+4 - 4       # subtraction
+4 * 4       # multiplication
+
+```
+]
+
+.pull-right[
+``` {r}
+4 / 4       # division
+4 ^ 4       # exponentiation
+sqrt(4)     # Square root
+```
+
+]
+
+---
+
+# Objects in R
+
+As R is an object-based language, you can name any value, or string or set it as a variable. For example, you can set 4 to be called a using `a = 4`, or `a <- 4`. Then when you want to call out 4, you can type `a` in the editor to call out the variable.
+
+.pull-left[
+
+``` {r}
+a <- 4              # numerics
+a
+```
+
+You can also perfom calculations with the objects you have created!
+
+``` {r tidy=TRUE, results='hold'}
+a + a # Addition
+a - a*2 # Subtraction & Multiplication
+```
+]
+
+.pull-right[
+``` {r}
+b <- "Hello world!" # characters
+b
+
+```
+
+However, you cannot perform mathematical calculations on characters!
+
+``` {r error=TRUE}
+b - b # Gives an error!
+
+```
+]
+
+---
+
+# Naming your objects
+
+You can name your objects anything you want (up to your imagination!), but there are a few rules. Names cannot start with number, and they cannot use special symbols such as `^`, `!`, `$`, `@`, `+`, `-`, `/`, or `*`:
+
+``` {r echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(knitr)
+
+GoodNames <- c("a", "Boo", "FOO", "my_variables", ".variables", "mod.1")
+BadNames <- c("1a", "!Boo", "$", "^my_variables", "/variables", "*mod.1")
+
+df <- data.frame(GoodNames, BadNames, stringsAsFactors = FALSE)
+
+kable(df, format="html")
+
+```
+
+Some best practice of object naming: The object name should be **`consise`**, **`meaningful`**, **`consistent`**, and **`specific`**.
+
+
+---
+
+# Vectors
+
+Vectors contain **elements of the same type**. The data types can be integer, double, character, logical, complex or raw (we don't go into complex or raw data). Vectors are generally created using the `c()` function.
+
+--
+
+.pull-left[
+- integer (numbers without decimcals)
+
+```{r}
+v1 <- c(1, 2, 3, 4, 5)
+v1
+```
+
+- double (numbers with decimals)
+
+```{r}
+v2 <- c(1.234, 0.632, -0.234, 7/42)
+v2
+```
+]
+
+--
+
+.pull-right[
+- character/strings (text)
+
+```{r}
+c("Hello", "World", "!", "Are you", "555?")
+
+```
+
+- logical
+
+```{r}
+c(TRUE, TRUE, FALSE, F, T) 
+# Do not use F or T for logical. It gets confusing
+
+```
+
+]
+
+
+---
+
+# Vectors with different types of elements
+
+What happens when you have a vector that contains different types of elements? They will coerce into a single type of element
+
+--
+
+.pull-left[
+- integers and doubles
+
+```{r, tidy=TRUE, results='hold'}
+v1 <- c(1L, 2L, 3L) # putting L after a number makes it an integer
+v2 <- c(1, 2.86, 3)
+v1
+v2
+```
+
+``` {r, results='hold'}
+typeof(v1) # typeof() determines the type of an object
+typeof(v2)
+
+```
+
+]
+
+--
+
+.pull-right[
+- characters, logicals and doubles
+
+```{r}
+v3 <- c("Hello", TRUE, 555)
+v3
+typeof(v3)
+```
+
+]
+
+---
+
+# Data Frames
+
+While vectors are one-dimensional, a data frame is a table-like data structure that is two-dimensional in nature.
+
+--
+
+Data frames can store multiple types of elements, such as doubles, logicals, and characters
+
+--
+
+
+```{r }
+df <- data.frame(c(-9.1,0.2,3.4,4,5), # Doubles
+                 c(FALSE, TRUE, TRUE, FALSE, FALSE), # Logicals
+                 c("Var1", "Var2", "Var3", "Var4", "Var5")) # Characters
+names(df) <- c("Double", "Logical", "Character") # Use names() to view the column names
+df
+```
+
+---
+
+# Data Frames
+
+We can check the structure of the data frame using `str()` to check the type of element of each column.
+
+```{r}
+str(df) # str() stands for structure
+```
+
+We see that R automatically converts the character column into a factor!
+
+---
+
+# Loading and saving data
+
+In any programming language, we must know how to load and save our data. In R, we can load our data with various functions:
+
+.pull-left[
+- text files: `read.table()`
+
+- csv files: `read.csv()`
+]
+
+.pull-right[
+- xlsx files: `read.xlsx()` using the `xlsx ` package
+
+- SPSS data: `read.sav()` using the `haven` package
+]
+
+--
+
+## We also must know how to save our data! 
+
+
+--
+
+I would recommend saving your data in **`.csv`** format as it loads and saves faster. Additionally, whether loading or saving data, we can save it in specific folders using `file.path(yourpath, filename)`. In summary, this is how a saving/loading data looks like in R:
+
+--
+
+
+```{r}
+rootdir <- "D:/Winson/Github/R-Workshop" 
+datadir <- file.path(rootdir, "data") # Construct the path to the data directory
+csvfile <- "df_example.csv"
+file.path(datadir, csvfile) # Gives the full path
+```
+
+--
+
+You will then type `write.csv(df, file.path(rootdir, csvfile))` to save the file. Simple, isn't it?
+
+
+---
+
+
+
+class: inverse, center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
