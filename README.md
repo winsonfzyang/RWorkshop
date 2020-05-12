@@ -1,6 +1,8 @@
 # R-Workshop
 This repository contains all the resources for the R-Workshop.
 
+To get start, you can either clone or download the repository.
+
 
 ## Learning Objectives
 This is a two-day hands on workshop based on the book [R for Data Science](http://r4ds.had.co.nz/). You will learn how to visualize, transform, and model data in R and work with date-times, character strings, and untidy data formats. Along the way, you will learn and use many packages from the tidyverse including ggplot2, dplyr, tidyr, readr, purrr, tibble, stringr, lubridate, and forcats.
@@ -19,7 +21,8 @@ In the unlikely event that there are problems with installing R and R Studio, yo
 3. The set of relevant R packages, which you can install by connecting to the internet, opening RStudio, and running:  
 
     `install.packages(
-        c("remotes", "rmarkdown", "skimr", "knitr", "tidyverse", "kableExtra")
+        c("remotes", "rmarkdown", "knitr", "tidyverse", "kableExtra", "skimr",
+        "haven", "readxl", "ggbeeswarm", "ggrepel", "xaringan", "babynames", "fontawesome","DT")
     )
     remotes::install_github('yihui/xaringan')`
 
