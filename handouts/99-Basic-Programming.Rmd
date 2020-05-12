@@ -1,11 +1,14 @@
 ---
 title: "Getting started with R Notebook"
 output:
-  html_document: 
-    fig_caption: yes
+  word_document:
     toc: yes
   html_notebook: default
   pdf_document: default
+  html_document:
+    fig_caption: yes
+    toc: yes
+always_allow_html: true
 editor_options:
   chunk_output_type: inline
 ---

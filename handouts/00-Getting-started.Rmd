@@ -1,10 +1,12 @@
 ---
 title: "Getting started with R Notebook"
 output:
+  pdf_document: default
+  html_notebook: default
+  word_document: default
   html_document:
     df_print: paged
-  html_notebook: default
-  pdf_document: default
+always_allow_html: true
 editor_options:
   chunk_output_type: inline
 ---
