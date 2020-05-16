@@ -63,7 +63,7 @@ class: right, middle
 
 [`r fa(name = "twitter")` @winsonfzyang](http://twitter.com/winsonfzyang)  
 [`r fa(name = "github")` @winsonfzyang](http://github.com/winsonfzyang)  
-[`r fa(name = "link")` winsonfzyang.github.io](https://winsonfzyang.github.io)  
+[`r fa(name = "link")` winsonfzyang.github.io](https://winsonfzyang.rbind.io)  
 [`r fa(name = "paper-plane")` winson.yang@ttu.edu](mailto:winson.yang@ttu.edu)
 
 ---
