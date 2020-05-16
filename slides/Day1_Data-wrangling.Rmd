@@ -47,6 +47,62 @@ background-size: cover
 
 ---
 
+
+
+# Acknowledgements
+
+.pull-left[
+
+.pull-left[
+
+<img style="border-radius: 50%;" src="img/ttu_dept.jpg" width="150px"/>
+
+[TTU Department of Psychological Sciences](https://www.depts.ttu.edu/psy/)
+
+
+]
+
+.pull-right[
+
+
+<img style="border-radius: 50%;" src="img/rmorgan.jpg" width="150px"/>
+
+[Dr Robert Morgan, Department Chair](https://www.depts.ttu.edu/psy/people/rmorgan/index.php)
+
+]
+
+]
+
+.pull-right[
+
+.pull-left[
+
+
+<img style="border-radius: 50%;" src="img/Sean_Obryan2.jpg" width="150px"/>
+
+[Sean O'Bryan, Psychological Sciences Graduate Student Advisory Council]()
+
+]
+
+.pull-right[
+
+
+<img style="border-radius: 50%;" src="img/tran.jpg" width="150px"/>
+
+[Tran Le, Psychological Sciences Graduate Student Advisory Council]()
+
+]
+
+
+
+]
+
+
+
+
+
+---
+
 class: inverse, center, middle
 
 # Let's Get Started
@@ -71,25 +127,20 @@ class: right, middle
 
 --
 
-Second year Experimental (Cognitive) student.
+Second year Experimental (Cognitive) Psychology student.
+
+- Projects include Neurofeedback, Neuroscience of Meditaition, cognitive flexibility, Neurodegeneration
 
 --
 
-- Projects include Neurofeedback, Neuroscience of Meditaition, Meta-awareness and flexibility, Social Function in Neurodegeneration, Healthy aging
+Other projects
 
---
-
-Programming enthusiast
-
---
-
-- data visualization, UX/UI, software development for neuroscientists and psychologists
+- data visualization, UX/UI, software development for neuroscientists and psychologists  
+- Programming education 
 
 --
 
 Interests
-
---
 
 - Photography, baking, cooking, hiking
 
@@ -122,14 +173,7 @@ Interests
 
 ---
 
-class: inverse, center, middle
-
-# Who are you and why are you here?
-
----
-
-
-# Workhop aims
+# Workshop aims
 
 Introduce the main components of the Tidyverse
 - readr (read files)
