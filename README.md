@@ -26,6 +26,8 @@ In the unlikely event that there are problems with installing R and R Studio, yo
     )
     remotes::install_github('yihui/xaringan')`
 
+In some cases for Windows users, you may encounter errors while installing some packages as you need Rtools installed. In that case, please install [Rtools here](https://cran.rstudio.com/bin/windows/Rtools/).
+
 If you're a new R user, it's possible that installing R will be challenging. In that case, feel free to ignore the instructions and just count on RStudio Cloud. You can also contact me before the workshop so we can troubleshoot together.
 
 
