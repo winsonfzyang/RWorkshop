@@ -1,11 +1,12 @@
 ---
 title: "Getting started with R Notebook"
 output:
-  pdf_document: default
-  html_notebook: default
-  word_document: default
   html_document:
     df_print: paged
+    always_allow_html: true
+    fig_caption: yes
+    toc: true
+    toc_float: true
 always_allow_html: true
 editor_options:
   chunk_output_type: inline
@@ -20,7 +21,7 @@ if (!require(tidyverse)) install.packages("tidyverse") ; library(tidyverse)
 if (!require(skimr)) install.packages("skimr") ; library(skimr)
 ```
 
-## R notebooks
+# R notebooks
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
@@ -38,7 +39,7 @@ When you save the notebook, an HTML file containing the code and output will be 
 The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
 
 
-## What you will learn in this two-part workshop
+# What you will learn in this two-part workshop
 
 This is a short workshop that aims to guide you with the best practices in using R for statistical analyses, specifically for psychologists. Hence there are some portions which I will highlight more than the others. Additionally, this workshop will assume you know some basic knowledge in R. 
 
@@ -49,7 +50,7 @@ In this workshop, you will learn how to use the `tidyverse` collection, which is
 - data visualization and `ggplot2` grammar
 
 
-### This is an example of a plot you will be able to create at the end of this workshop!
+# This is an example of a plot you will be able to create at the end of this workshop!
 ``` {r echo=FALSE}
 ggplot(data = mpg, aes(x = displ, y = hwy)) +
   geom_jitter(aes(color = class, 

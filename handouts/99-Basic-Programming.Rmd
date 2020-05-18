@@ -1,12 +1,15 @@
 ---
-title: "Getting started with R Notebook"
+title: "Basic R Programming"
 output:
-  word_document:
-    toc: yes
+  html_document:
+    df_print: paged
+    always_allow_html: true
+    fig_caption: yes
+    toc: true
+    toc_float: true
   html_notebook: default
   pdf_document: default
-  html_document:
-    fig_caption: yes
+  word_document:
     toc: yes
 always_allow_html: true
 editor_options:
@@ -24,12 +27,12 @@ if (!require(tidyverse)) install.packages("tidyverse") ; library(tidyverse)
 if (!require(skimr)) install.packages("skimr") ; library(skimr)
 ```
 
-## Basics of coding
+# Basics of coding
 
 We will review some basics of coding, since I will assume you have some knowledge of R. Hence this will only be a short section in the interests of getting you wrangling with data as soon as possible. 
 
 
-### R is a calculator
+# R is a calculator
 
 You can use R as a calculator like this: 
 
@@ -65,7 +68,7 @@ Now, let's practice. What is:
 </span>
 
 
-### Objects in R
+# Objects in R
 
 As R is an object-based language, you can name any value, or string or set it as a variable. For example, you can set 4 to be called a using `a = 4`, or `a <- 4`. Then when you want to call out 4, you can type `a` in the editor to call out the variable.
 
@@ -136,7 +139,7 @@ Here are some texts and values I would like you to assign objects with.
 ```
 
 
-### Operators
+# Operators
 
 There are many types of operators in R. They are normally used to carry out mathematical and logical operations. We can classify R operators into the following categories:
 
@@ -145,7 +148,7 @@ There are many types of operators in R. They are normally used to carry out math
 3. Logical operators
 4. Assignment operators
 
-#### Arithmetic operators
+## Arithmetic operators
 
 These operators are used to carry out mathematical operations like addition and multiplication. We have already covered most of them, but here are more arithmetic operators:
 
@@ -171,7 +174,7 @@ y ^ (x - 5)
 ```
 
 
-#### Relational operators
+## Relational operators
 
 Relational operators are used to compare between values. Here is a list of relational operators available in R.
 
@@ -205,7 +208,7 @@ x != 6
 
 ```
 
-#### Logical operators
+## Logical operators
 
 Logical operators are used to compare between values. All operations are carried out in element-wise fashion. They can work on single elements, as well as vectors and data frames. 
 
@@ -238,7 +241,7 @@ x | y
 x || y
 ```
 
-#### Assignment operators
+## Assignment operators
 
 These operators are used to assign values to variables.
 
@@ -259,7 +262,7 @@ The `<<-` operator is used for assigning to variables in the parent environments
 </span>
 
 
-### Vectors!
+# Vectors!
 
 There are two types of vectors:  
 
@@ -292,7 +295,7 @@ length(y)
 length(z)
 ```
 
-#### Atomic vectors can only contain one type of element!
+## Atomic vectors can only contain one type of element!
 
 From the previous example, you will notice that my vectors are all either numerics, characters, or logicals. I don't have a mix of these types of elements. What happens when I mix them in the same vector? You can try them out below:
 
@@ -312,7 +315,7 @@ Hint: To put objects in the same vector, you will do the same as with elements: 
 
 Notice that for numerics and logicals, the vector has turned into a numeric vector, but for anything that contains characters, the entire vector becomes a character array.
 
-#### Coercion
+### Coercion
 
 What you did above is called **implicit coercion**. Implicit coercion happens when you use a vector in a specific context that expects a certain type of vector. For example, when you use a logical vector with a numeric summary function, or when you use a double vector where an integer vector is expected.
 
@@ -333,7 +336,7 @@ Here are some exercises to try:
 
 You see that the output for No.3 is weird because everything becomes `TRUE`! This will become confusing. We normally use logical operators to filter and subset data. However, there are better methods for doing this, which we will cover in the next tutorial.
 
-#### Subsetting vectors
+## Subsetting vectors
 
 We subset vectors to get only the elements or values we want, dropping the unwanted values.
 
@@ -358,9 +361,9 @@ y <- c("Hallo", "Hello", "Bonjour", "Szia", "Hoi", "Ciao")
 ```
 
 
-#### Applications of subsetting vectors
+## Applications of subsetting vectors
 
-##### Loopup tables (character subsetting)
+### Lookup tables (character subsetting)
 
 Character matching is a powerful way to create lookup tables. Say you want to convert abbreviations:
 
@@ -370,7 +373,7 @@ lookup <- c(m = "Male", f = "Female", u = NA)
 lookup[x]
 ```
 
-##### Ordering (integer subsetting)
+### Ordering (integer subsetting)
 
 `order()` takes a vector as its input and returns an integer vector describing how to order the subsetted vector
 
@@ -380,7 +383,7 @@ order(x) # Gets the index from lowest value to highest value
 x[order(x)] # Subset (in fact you re-order the elements) the vector
 ```
 
-#### Selecting rows based on a condition (logical subsetting)
+### Selecting rows based on a condition (logical subsetting)
 
 Because logical subsetting allows you to easily combine conditions from multiple columns, it's probably the most commonly used technique for extracting rows out of a data frame. This is normally used to filter your data. However, there are more powerful tools to do this. We will cover that in the next tutorial. This is just the basic idea of subsetting.
 
@@ -391,6 +394,6 @@ mtcars[mtcars$gear == 5 & mtcars$cyl == 4, ] # Subset rows where gear = 5 AND cy
 ```
 
 
-## Concluding statement
+# Concluding statement
 
 This is just a crash course on the basics of R Programming. There are definitly more details we can cover in each topic, but this will get you started on R and should be enough to get you through the next tutorial, which is data wrangling with tidyverse.
