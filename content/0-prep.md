@@ -1,6 +1,7 @@
 ---
-title: Prep
-nav: true
+title: "Prep"
+nav: yes
+output: pdf_document
 --- 
 
 # Workshop Prep
@@ -19,6 +20,9 @@ In the unlikely event that there are problems with installing R and R Studio, yo
         "haven", "readxl", "ggbeeswarm", "ggrepel", "xaringan", "babynames", "fontawesome","DT")
     )
     remotes::install_github('yihui/xaringan')`
+
+In some cases for Windows users, you may encounter errors while installing some packages as you need Rtools installed. In that case, please install [Rtools here](https://cran.rstudio.com/bin/windows/Rtools/).
+
 
 2. For best experience during the workshop, please have a second monitor or second display to follow along with the demonstration. If you do not have one, it is okay. You can also follow along with your copy of the materials.
 
