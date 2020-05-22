@@ -15,12 +15,14 @@ In the unlikely event that there are problems with installing R and R Studio, yo
 
 1. The set of relevant R packages, which you can install by connecting to the internet, opening RStudio, and running:  
 
-    `install.packages(
+    ```
+    install.packages(
         c("remotes", "rmarkdown", "knitr", "tidyverse", "kableExtra", "skimr",
         "haven", "readxl", "ggbeeswarm", "ggrepel", "xaringan", "babynames", "fontawesome","DT")
     )
     
-    remotes::install_github('yihui/xaringan')`
+    remotes::install_github('yihui/xaringan')
+    ```
 
 In some cases for Windows users, you may encounter errors while installing some packages as you need Rtools installed. In that case, please install [Rtools here](https://cran.rstudio.com/bin/windows/Rtools/).
 
