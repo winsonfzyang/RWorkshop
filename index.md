@@ -15,7 +15,7 @@ As I know everyone is busy with work, research, and classes, this workshop is no
 
 **Date:** 17th and 18th June (Wednesday & Thursday)  
 **Time:** 3.00 - 4.30pm  
-**Location:** Virtually, via [Skype for Business](http://www.depts.ttu.edu/telecom/sfb/index.php) (A link will be sent one week before the workshop)
+**Location:** Virtually, via [Zoom](https://zoom.us/) (A link will be sent a few days before the workshop)
 
 
 ## Sign-up and survey
