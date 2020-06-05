@@ -579,7 +579,7 @@ df_csv %>% filter(Dx %in% c("AD", "bvFTD", "svPPA")) %>%
   spread(key = "Cog", value = "Score")
 ```
 
-<img src="img/fx_spread.JPG" width="350">
+<img src="img/fx_spread.JPG" width="300">
 
 ]
 
