@@ -80,7 +80,7 @@ background-size: cover
 
 <img style="border-radius: 50%;" src="img/Sean_Obryan2.jpg" width="150px"/>
 
-[Sean O'Bryan, Psychological Sciences Graduate Student Advisory Council]()
+[Sean O'Bryan, Psychological Sciences Graduate Student Advisory Council](https://www.depts.ttu.edu/psy/caprockscience/people.php)
 
 ]
 
@@ -89,7 +89,7 @@ background-size: cover
 
 <img style="border-radius: 50%;" src="img/tran.jpg" width="150px"/>
 
-[Tran Le, Psychological Sciences Graduate Student Advisory Council]()
+[Tran Le, Psychological Sciences Graduate Student Advisory Council](https://www.depts.ttu.edu/psy/sharc/People.php)
 
 ]
 
@@ -98,7 +98,9 @@ background-size: cover
 ]
 
 
+<img style="border-radius: 50%;" src="img/allisonhorst.jpg" width="150px"/>
 
+[Artwork by @Allisonhorst](https://twitter.com/allison_horst)
 
 
 ---
@@ -138,38 +140,11 @@ Other projects
 - data visualization, UX/UI, software development for neuroscientists and psychologists  
 - Programming education 
 
---
+---
 
-Interests
-
-- Photography, baking, cooking, hiking
-
-.pull-left[
-
-.pull-left[
-![Photography](img/photography.JPG)
-]
-
-.pull-right[
-![Baking](img/baking.JPG)
-]
-
-
-]
-
-.pull-right[
-
-.pull-left[
-![Cooking](img/cooking.JPG)
-]
-
-.pull-right[
-![Hiking](img/hiking.JPG)
-]
-
-
-]
-
+<center>
+    <img src="img/r_first_then.png" width="500"/>
+</center>
 
 ---
 

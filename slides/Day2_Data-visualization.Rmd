@@ -67,11 +67,10 @@ class: inverse, middle, center
 
 ---
 
-background-image: url(img/ggplot.jpg)
+background-image: url(img/ggplot2_masterpiece.png)
 background-position: 50% 50%
 background-size: cover
 class: center, bottom, inverse
-
 
 
 ---
