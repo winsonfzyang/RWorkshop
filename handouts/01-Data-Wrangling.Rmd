@@ -75,7 +75,7 @@ Here's an example:
 
 ```{r load-data}
 # Set directories 
-root_dir <- "../" # ../ denotes the parent directory of 01-Data-Wrangling.Rmd
+root_dir <- ".." # .. denotes the parent directory of 01-Data-Wrangling.Rmd
 # You can set your root_dir to the directory of where RWorkshop is
 # e.g. /User/YOURNAME/RWorkshop
 data_dir <- file.path(root_dir, "data")
@@ -89,6 +89,8 @@ df_sfx <- read_csv(file.path(data_dir, sample_csvfile))
 
 :::fyi
 Notice that I separated and comment each part of the process to make it clear for the readers and I to follow. Also, I use `file.path()` to create several subfolders within the project directory (i call it root_dir). This type of naming will make things clear for more complex projects where you have several data sets in several folders, especially for longitudinal studies!
+
+It is good to always create an Rproject for each project you are working on so R will automatically go to the directory where the RProject is located at when you open your project. Some common directories you may find are: data, output, R, plots, and report.
 :::
 
 
@@ -331,7 +333,7 @@ Use SHIFT + ALT + UP/DOWN (windows) or COMMAND + OPTION + UP/DOWN (Mac) to copy 
 :::note
 Hint: For no.2, you need to use two filter combinations: > , &
 Hint: For no.3, you need to use three filter combinations: > , & , |
-Hint: for charactesr such as CONTROL, you will need to use "CONTROL" instead of CONTROL
+Hint: for characters such as CONTROL, you will need to use "CONTROL" instead of CONTROL
 :::
 
 ```{r fx-filter-exercise}
@@ -726,7 +728,7 @@ df_sfx_long %>% spread(key = "CogTest", value = "Score") # Note that it spreads 
 The format is similar to `gather()`:
 
 * `key`: The column you want to split (should be categorical)
-* `value`: he column you want to use to populate the new columns (the `value` column we just created in the spread step)
+* `value`: The column you want to use to populate the new columns (the `value` column we just created in the spread step)
 
 
 ##### Now, you try!
