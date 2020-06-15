@@ -20,14 +20,12 @@ In the unlikely event that there are problems with installing R and R Studio, yo
 
 3. The set of relevant R packages, which you can install by connecting to the internet, opening RStudio, and running:  
 
-    ```
-    install.packages(
+    `install.packages(
         c("remotes", "rmarkdown", "knitr", "tidyverse", "kableExtra", "skimr",
         "haven", "readxl", "ggbeeswarm", "ggrepel", "xaringan", "babynames", "fontawesome","DT")
     )
     
-    remotes::install_github('yihui/xaringan')
-    ```
+    remotes::install_github('yihui/xaringan')`
 
 In some cases for Windows users, you may encounter errors while installing some packages as you need Rtools installed. In that case, please install [Rtools here](https://cran.rstudio.com/bin/windows/Rtools/).
 
@@ -43,7 +41,7 @@ These are some resources to get you start or continue learning R. The list is no
 [UCLA's Statistics Consulting Group](https://stats.idre.ucla.edu)<br/>
 [R for Data Science](https://r4ds.had.co.nz)<br/>
 [Our Coding Club](https://ourcodingclub.github.io/)<br/>
-[R for Psychological Science](https://psyr.org/)<br/>
+[R for Psychological Science](http://psyr.djnavarro.net/)<br/>
 [Teacups, giraffes, and statistics](https://tinystats.github.io/teacups-giraffes-and-statistics/)<br/>
 
 
