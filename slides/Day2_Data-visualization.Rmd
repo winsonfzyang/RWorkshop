@@ -19,7 +19,8 @@ editor_options:
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(comment = "#", warning = FALSE, message = FALSE)
-library(fontawesome)
+if (!require(remotes)) install.packages("remotes"); library(remotes)
+if (!require(fontawesome)) install_github("rstudio/fontawesome"); library(fontawesome)
 ```
 
 layout: true
