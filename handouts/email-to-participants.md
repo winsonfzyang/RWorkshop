@@ -18,11 +18,12 @@ Download the most recent versions of R and RStudio for the appropriate OS using 
 3. The set of relevant R packages, which you can install by connecting to the internet, opening RStudio, and running:  
 
     install.packages(
-        c("remotes", "rmarkdown", "knitr", "tidyverse", "kableExtra", "skimr",
-        "haven", "readxl", "ggbeeswarm", "ggrepel", "xaringan", "fontawesome","DT")
+        c("remotes", "devtools", "rmarkdown", "knitr", "tidyverse", "kableExtra", "skimr",
+        "haven", "readxl", "ggbeeswarm", "ggrepel", "xaringan", "DT")
     )
 
-    remotes::install_github('yihui/xaringan')
+    remotes::install_github('yihui/xaringan')  
+    remotes::install_github("rstudio/fontawesome")
 
 In the unlikely event that there are problems with installing R and R Studio, you can use RStudio Cloud, but you'll need a laptop that can access the internet.  
 
@@ -35,7 +36,7 @@ The full workshop materials will be uploaded on 15th June. Before that, you can 
 
 Last but not least, we will be using Zoom for the Workshop. Here is the meeting link for the workshop:
 
-17th June 3.00 - 4.30pm: https://zoom.us/j/98250983423?pwd=MEJPbkt3cVNoYUp0VStjbk4vUDlNZz09
+17th June 3.00 - 4.30pm: https://zoom.us/j/98250983423?pwd=MEJPbkt3cVNoYUp0VStjbk4vUDlNZz09  
 18th June 3.00 - 4.30pm: https://zoom.us/j/99330651695?pwd=UGVtMTNjamN3aW9sOEJCRTQrZENVUT09
 
 Please install Zoom if you have not done so, and add this to your calendar. The link will be live 10 minutes before the scheduled time.
