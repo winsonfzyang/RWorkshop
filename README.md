@@ -25,7 +25,7 @@ In the unlikely event that there are problems with installing R and R Studio, yo
         "haven", "readxl", "ggbeeswarm", "ggrepel", "xaringan", "DT")
     )
 
-    remotes::install_github('yihui/xaringan')
+    remotes::install_github('yihui/xaringan')  
     remotes::install_github("rstudio/fontawesome")`
 
 
