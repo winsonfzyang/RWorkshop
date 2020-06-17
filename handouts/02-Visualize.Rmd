@@ -323,6 +323,9 @@ df %>% ggplot(aes(x = Generosity, # Set the X variable
 
 ### Bar plot
 
+
+##### Now, you try!
+
 :::puzzle
 I want you to try this first. Create a bar plot for Continent vs Score. Use `geom_bar(position = "dodge", stat = "identity")` to add it to ggplot.
 :::
@@ -333,6 +336,8 @@ I want you to try this first. Create a bar plot for Continent vs Score. Use `geo
 
 
 ```
+
+##### Now, you try!
 
 :::puzzle
 Keep this plot in mind! Now, create mean Score for each Continent. 
@@ -358,7 +363,13 @@ It is advisable to summarize the data using `group_by` and `summarize` first bef
 :::
 
 
-Now, create a mean score data called `ContinentScore` and plot it.
+
+##### Now, you try!
+
+:::puzzle
+Now, create a mean score data called `ContinentScore` and create the bar chart. Plot the ContinentScore on the y-axis and Continent on the x-axis
+:::
+
 
 ```{r ggplot-geom_bar-exercise2}
 # Type your code below this line!
