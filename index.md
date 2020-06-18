@@ -15,13 +15,15 @@ As I know everyone is busy with work, research, and classes, this workshop is no
 
 **Date:** 17th and 18th June (Wednesday & Thursday)  
 **Time:** 3.00 - 4.30pm  
-**Location:** Virtually, via [Zoom](https://zoom.us/) (A link will be sent a few days before the workshop)
+**Location:** Virtually, via [Zoom](https://zoom.us/)
+
+
 
 
 ## Sign-up and survey
 
 * Please click [here](https://ttupsych.az1.qualtrics.com/jfe/form/SV_09hJlzsRkQk8jHL) to sign-up!
-* Post-workshop survey will be up on the day of the workshop!
+* Please click [here](https://ttupsych.az1.qualtrics.com/jfe/form/SV_2au6MN31RW0U3l3) to complete the post-workshop survey.
 
 
 ## Contact
