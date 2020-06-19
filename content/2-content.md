@@ -26,7 +26,7 @@ Day 1 introduces you to the basics of loading and manipulating your data with th
 
 [Slides for Day 1: Data Wrangling](https://winsonfzyang.github.io/RWorkshop/slides/Day1_Data-wrangling.html)  
 [Recorded workshop video for Day 1: Data Wrangling](https://youtu.be/P1a3bnL6vb8)  
-
+[Completed workbook](https://winsonfzyang.github.io/RWorkshop/handouts/01-Data-Wrangling-completed.html)
 
 
 ### Day 2: Data Visualization with ggplot
@@ -34,3 +34,4 @@ For this section, we will focus on the grammar of ggplot, creating basic plots, 
 
 [Slides for Day 2: Data Visualization with ggplot](https://winsonfzyang.github.io/RWorkshop/slides/Day2_Data-visualization.html)  
 [Recorded workshop video for Day 2: Data Visualization with ggplot](https://youtu.be/-7L0Fqhk21I)
+[Completed workbook](https://winsonfzyang.github.io/RWorkshop/handouts/02-Visualize-completed.html)
