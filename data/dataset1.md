@@ -1,6 +1,6 @@
-# The California Test Score Data Set
+# The Aging Data Set
 
-This dataset is a simulated neuroimaging data of healthy older adults and patients neurodegenerative diseases. It as based on a project I worked on at UCSF. Data in this excel spreadsheet is ***NOT REAL*** data.
+This dataset is a simulated neuroimaging data of healthy older adults and patients neurodegenerative diseases. Data in this excel spreadsheet is ***NOT REAL*** data.
 
 Description: Neurodegenerative disease data
 
