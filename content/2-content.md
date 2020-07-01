@@ -33,5 +33,5 @@ Day 1 introduces you to the basics of loading and manipulating your data with th
 For this section, we will focus on the grammar of ggplot, creating basic plots, making custom plots, and setting custom themes. This is where you can get creative with your colors, themes, settings, etc. Show your artsy side with ggplot!
 
 [Slides for Day 2: Data Visualization with ggplot](https://winsonfzyang.github.io/RWorkshop/slides/Day2_Data-visualization.html)  
-[Recorded workshop video for Day 2: Data Visualization with ggplot](https://youtu.be/-7L0Fqhk21I)
+[Recorded workshop video for Day 2: Data Visualization with ggplot](https://youtu.be/-7L0Fqhk21I)  
 [Completed workbook](https://winsonfzyang.github.io/RWorkshop/handouts/02-Visualize-completed.html)
