@@ -281,11 +281,11 @@ See that `df_sfx %>% select(-q_vars)` gives you the same outcome as `df_sfx %>% 
 ##### Now, you try! 
 
 :::puzzle
-We want to remove the DMN, SMN, SAN, and SN variables this time. They are seed-based functional connectivity networks in the brain. 
+We want to remove the RS1, RS2, RS3, RS4 variables this time. 
 :::
 
 :::note
-Hint: Parse the variables you want to remove into an object called `FC_networks`.
+Hint: Parse the variables you want to remove into an object called `RS_networks`.
 :::
 
 ```{r fx-deselect-exercise}
@@ -321,9 +321,9 @@ df_sfx %>% filter(Sex == "Female")
 :::puzzle
 Select and filter:
 
-* All IDs, Age, Sex, Dx, MMSE, CDR, GDS, and education of patients with MMSE > 23
-* All IDs, Age, Sex, Dx, MMSE, CDR, GDS, and education of patients with MMSE > 16 and CDR = 0
-* All IDs, Age, Sex, Dx, MMSE, CDR, GDS, and education of patients with MMSE > 16 & are either CONTROL, bvFTD, or nfvPPA
+* All IDs, Age, Sex, Dx, MMSE, CDR, COG1, and education of patients with MMSE > 23
+* All IDs, Age, Sex, Dx, MMSE, CDR, COG1, and education of patients with MMSE > 16 and CDR = 0
+* All IDs, Age, Sex, Dx, MMSE, CDR, COG1, and education of patients with MMSE > 16 & are either CONTROL, bvFTD, or nfvPPA
 :::
 
 :::fyi
@@ -373,7 +373,7 @@ df_sfx %>% select(all_of(demographics), MMSE) %>% filter(MMSE > 23 & Dx %in% myD
 :::puzzle
 Use the `%in%` method to get:
 
-* All IDs, Age, Sex, Dx, MMSE, CDR, GDS, and education of patients with MMSE > 16 & are either CONTROL, bvFTD, or nfvPPA
+* All IDs, Age, Sex, Dx, MMSE, CDR, COG1, and education of patients with MMSE > 16 & are either CONTROL, bvFTD, or nfvPPA
 :::
 
 ```{r fx-filter2-exercise}
@@ -421,7 +421,7 @@ df_sfx %>% arrange(desc(Dx), MMSE)
 ##### Now, you try!  
 
 :::puzzle
-Use `desc()` to arrange the GDS in descending order.
+Use `desc()` to arrange the COG1 in descending order.
 :::
 
 ```{r fx-arrange-desc-exercise}
@@ -611,7 +611,7 @@ These are the steps you will need to perform to get to the final data.
 
 2. Then, create the total score for WB (use `mutate()`)
 
-3. Select these variables: SAN, DMN, SN, Age, MMSE, Dx, CDR, TASIT, WB total score (use `select()`)
+3. Select these variables: RS1, RS3, RS4, Age, MMSE, Dx, CDR, COG2, WB total score (use `select()`)
 
 4. Arrage the data by CDR, with ascending order (use `arrange()`).
 
@@ -667,7 +667,7 @@ Hint: mean: `mean()`, sd: `sd()`, median: `median()`.
 
 # Now, let's put everything together!
 
-Use `group_by()`, `summarise()`, and `arrange()` to display each group's GDS, MMSE, and CDR mean score in descending order **(Highest GDS on top)**. Call this data frame `df_sfx_groupsummary`. Use df_sfx_2 for this exercise.
+Use `group_by()`, `summarise()`, and `arrange()` to display each group's COG1, MMSE, and CDR mean score in descending order **(Highest COG1 on top)**. Call this data frame `df_sfx_groupsummary`. Use df_sfx_2 for this exercise.
 
 ```{r exercise2}
 # Type your code after this line! 
@@ -697,13 +697,13 @@ In short:
 Here's an example:
 
 ```{r fx-gather}
-df_sfx_2 %>% select(ID, demographics, MMSE, CDR, GDS) %>% # Select only relevent variables to keep columns short
-  gather(key = "CogTest", value = "Score", MMSE, CDR, GDS) %>% 
+df_sfx_2 %>% select(ID, demographics, MMSE, CDR, COG1) %>% # Select only relevent variables to keep columns short
+  gather(key = "CogTest", value = "Score", MMSE, CDR, COG1) %>% 
   arrange(ID)
 ```
 
 
-Did you see that the variables MMSE, CDR, and GDS has now disappeared? It is now contained in a new variable called CogTest. Furthermore, we now have 600 rows instead of 200! This is because we have 200 patients and 3 tests that have to be rearranged into long format.
+Did you see that the variables MMSE, CDR, and COG1 has now disappeared? It is now contained in a new variable called CogTest. Furthermore, we now have 600 rows instead of 200! This is because we have 200 patients and 3 tests that have to be rearranged into long format.
 
 The opposite of `gather()` is `spread()`. As you might have guessed, it turns long data into wide data format.
 
@@ -716,8 +716,8 @@ Here's an example:
 ```{r fx-gather-spread}
 # Set an example long data from previous line
 df_sfx_long <- df_sfx_2 %>% 
-  select(ID, demographics, MMSE, CDR, GDS) %>% 
-  gather(key = "CogTest", value = "Score", MMSE, CDR, GDS)
+  select(ID, demographics, MMSE, CDR, COG1) %>% 
+  gather(key = "CogTest", value = "Score", MMSE, CDR, COG1)
 
 # Now turn the long data back to wide data
 df_sfx_long %>% spread(key = "CogTest", value = "Score") # Note that it spreads by alphabetical order unless you specify otherwise.
@@ -734,7 +734,7 @@ The format is similar to `gather()`:
 ##### Now, you try!
 
 :::puzzle
-Using the `df_sfx_groupsummary` we have just created, gather the MMSE, CDR, and GDS into one column called `CogTest`.
+Using the `df_sfx_groupsummary` we have just created, gather the MMSE, CDR, and COG1 into one column called `CogTest`.
 :::
 
 ```{r fx-gather-exericse}
@@ -757,7 +757,7 @@ For example, you might be interested in:
 3. CDR < 1 (early stage of disease)
 
 
-The variables you might want to analyze are TASIT (emotion reading), DMN, SAN, SN (these are brain networks), and WB (questionnaire).
+The variables you might want to analyze are COG2, RS1, RS2, and WB (questionnaire).
 
 Your analysis plan might look like this:
 
@@ -767,10 +767,10 @@ Your analysis plan might look like this:
 # Set interested variables
 demo <- c("ID", "Age", "Sex", "Dx", "Education", "CDR", "MMSE")
 myDx <- c("CONTROLS", "bvFTD", "svPPA")
-FCs <- c("SAN", "SN")
+RSs <- c("RS1", "RS2")
 WBs_old <- c("q1", "q2", "q3", "q4", "q5", "q6")
 WBs_new <- c("q1", "q2_r", "q3", "q4_r", "q5", "q6_r")
-EmoTest <- c("TASIT")
+COG2 <- c("COG2")
 
 # Reverse scoring function and prep
 reverseScore <- function(item, MaxScore, MinScore) {
@@ -783,7 +783,7 @@ MaxScore <- 5; MinScore <- 1
 # Subset data
 df <- df_sfx %>% # Take the data
   select(all_of(demo), 
-         all_of(FCs), 
+         all_of(RSs), 
          all_of(WBs_old), 
          all_of(EmoTest)) %>% # Select interested vars
   filter(Dx %in% myDx) %>% # Filter only myDx
@@ -791,7 +791,7 @@ df <- df_sfx %>% # Take the data
             list(r = ~reverseScore(., MaxScore, MinScore))) %>% # append _r at the end of the variable 
   mutate(WB_Score = rowSums(.[WBs_new])) %>%  # Create WB total score
   select(all_of(demo), 
-         all_of(FCs), 
+         all_of(RSs), 
          WB_Score,
          all_of(EmoTest))
 
@@ -805,7 +805,7 @@ Let's say you want to examine:
 
 1. the differences in MMSE between the patient groups (ANOVA)
 
-2. the relationship between SAN and TASIT, controlling for MMSE, Education, Age, and Sex (linear regression)
+2. the relationship between RS1 and COG2, controlling for MMSE, Education, Age, and Sex (linear regression)
 
 
 
@@ -819,12 +819,12 @@ summary(mod1)
 ```
 
 
-### 2. Regression: Relationship between SAN and TASIT, controlling for MMSE, Education, Age, and Sex
+### 2. Regression: Relationship between RS1 and COG2,controlling for MMSE, Education, Age, and Sex
 
 #### Covariates model
 
 ```{r stats-regression-cov}
-reg_cov <- lm(TASIT ~ MMSE + Education + Age + Sex, data = df)
+reg_cov <- lm(COG2 ~ MMSE + Education + Age + Sex, data = df)
 reg_cov %>% summary()
 
 ```
@@ -832,7 +832,7 @@ reg_cov %>% summary()
 #### Full model
 
 ```{r stats-regression-mod}
-reg_mod <- lm(TASIT ~ MMSE + Education + Age + Sex + SAN, data = df)
+reg_mod <- lm(COG2 ~ MMSE + Education + Age + Sex + RS1, data = df_sfx)
 reg_mod %>% summary()
 ```
 
