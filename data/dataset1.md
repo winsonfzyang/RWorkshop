@@ -1,4 +1,4 @@
-# The Aging Data Set
+# The Dementia Data Set
 
 This dataset is a simulated neuroimaging data of healthy older adults and patients neurodegenerative diseases. Data in this excel spreadsheet is ***NOT REAL*** data.
 
@@ -22,17 +22,17 @@ MMSE: Mini-mental state examination score
 
 CDR: Clinical Dementia Rating score
 
-GDS: Geriatric depression scale score
+COG1: example cognitvive test 1
 
-TASIT: TASIT-EET Score for emotion reading
+COG2: example cognitvive test 2
 
-DMN: Mean resting-state network connectivity of the Default Mode Network
+RS1: Functional connectivity of RS1
 
-SMN:Mean resting-state network connectivity of the Sensorimotor Network
+RS2: Functional connectivity of RS2
 
-SAN:Mean resting-state network connectivity of the Semantic Appraisal Network
+RS3: Functional connectivity of RS3
 
-SN: Mean resting-state network connectivity of the Salience Network
+RS4: Functional connectivity of RS4
 
 q1-q6: Sample questionnaire items, where q2, q4, and q6 are reverse coded.
 
